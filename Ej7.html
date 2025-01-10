@@ -22,16 +22,32 @@
     <input type="checkbox" value="resta" id="resta" />Restar
   </p>
   <p>
-    <input type="button" value="Operar" id="calculo" />
+    <input type="button" value="Operar" id="calculo" onclick="operaciones()" />
   </p>
   <p id="resultado"></p>
   
 </body>
 <script>
+  function operaciones(){
+
+  
   let valor1=parseFloat(document.getElementById("num1"))
   let valor2=parseFloat(document.getElementById("num2"))
 
   let suma=document.getElementById("suma")
   let resta=document.getElementById("resta")
+  let resultado=document.getElementById("resultado")
+
+  if(suma){
+    resultado+=num1+num2
+  }
+  if(resta){
+    resultado+=num1-num2
+  }
+  if (!sumar && !restar) {
+        resultado = 'Selecciona una'
+      }
+  resultado.textContent="Y el resultado es:"
+}
 </script>
 </html>
