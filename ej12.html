@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="generarTabla" onclick="tabla()">Generar Tabla</button>
+    <button id="resaltarCasiPrimos" onclick="resaltarPrimo()">Calcular Números Casi Primos</button>
+    <br><br>
+    <table id="tabla"></table>
+    <style>
+        .casi-primo {
+            background-color: yellow;
+        }
+    </style>
+</body>
+<script>
+function tabla(){
+    let tabla=document.getElementById("tabla");
+    let numero = 1;
+    for(let i = 0; i < 100; i++){
+        let fila = document.createElement("tr");
+        for(let d = 0; d < 100; d++){
+            let columna = document.createElement("td");
+            columna.textContent = numero;
+            fila.appendChild(columna);
+            numero++;
+        }
+        tabla.appendChild(fila);
+    }
+}
+
+function esCasiPrimo(n) {
+    let divisores = 0;
+    for (let i = 1; i <= n; i++) {
+        if (n % i === 0) {
+            divisores++;
+        }
+    }
+    return divisores === 3; 
+}
+
+function resaltarPrimo(){
+    let celdas = document.getElementById("tabla").getElementsByTagName("td");
+    for (let i = 0; i < celdas.length; i++) {
+        let numero = parseInt(celdas[i].textContent);
+        if (esCasiPrimo(numero)) {
+            celdas[i].classList.add("casi-primo");
+        }
+    }
+}
+</script>
+</html>

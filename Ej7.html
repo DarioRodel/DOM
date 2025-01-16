@@ -1,53 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ej7</title>
+    <title>Ejercicio 7</title>
+    
 </head>
+
 <body>
-  <p>
-    <label for="valor1">Ingrese primer valor:</label>
-    <input type="number" id="valor1" />
-  </p>
-  <p>
-    <label for="valor2">Ingrese segundo valor:</label>
-    <input type="number" id="valor2" />
-  </p>
-  <p>
-    <input type="checkbox" id="suma" />Sumar
-  </p>
-  <p>
-    <input type="checkbox" value="resta" id="resta" />Restar
-  </p>
-  <p>
-    <input type="button" value="Operar" id="calculo" onclick="operaciones()" />
-  </p>
-  <p id="resultado"></p>
-  
+    <p>
+        <label for="valor1">Ingrese primer valor:</label>
+        <input type="number" id="valor1" />
+    </p>
+    <p>
+        <label for="valor2">Ingrese segundo valor:</label>
+        <input type="number" id="valor2" />
+    </p>
+    <p>
+        <input type="checkbox" id="suma" />Sumar
+    </p>
+    <p>
+        <input type="checkbox" id="resta" />Restar
+    </p>
+    <p>
+        <input type="button" value="Operar" onclick="realizarOperacion()" />
+    </p>
+    <p id="resultado"></p>
+
 </body>
 <script>
-  function operaciones(){
+    function realizarOperacion() {
+        let num1 = parseFloat(document.getElementById("valor1").value);
+        let num2 = parseFloat(document.getElementById("valor2").value);
+        let suma = document.getElementById("suma").checked;
+        let resta = document.getElementById("resta").checked;
+        let resultado = document.getElementById("resultado");
 
-  
-  let valor1=parseFloat(document.getElementById("num1"))
-  let valor2=parseFloat(document.getElementById("num2"))
 
-  let suma=document.getElementById("suma")
-  let resta=document.getElementById("resta")
-  let resultado=document.getElementById("resultado")
-
-  if(suma){
-    resultado+=num1+num2
-  }
-  if(resta){
-    resultado+=num1-num2
-  }
-  if (!sumar && !restar) {
-        resultado = 'Selecciona una'
-      }
-  resultado.textContent="Y el resultado es:"
-}
+        if (suma && resta) {
+            resultado.textContent = "La suma es " + (num1 + num2) + ", y la diferencia es " + (num1 - num2);
+        } else if (suma && !resta) {
+            resultado.textContent = "La suma es " + (num1 + num2);
+        } else if (!suma && resta) {
+            resultado.textContent = "La diferencia es " + (num1 - num2);
+        } else {
+            resultado.textContent = "No se seleccionó ninguna operación.";
+        }
+    }
 </script>
 </html>

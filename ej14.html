@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+    <style>
+        p {
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="1">Elemento 1</p>
+    <p id="2">Elemento 2</p>
+    <p id="3">Elemento 3</p>
+
+    <button id="reaparecer">Reaparecer</button>
+
+    <script>
+        let parrafo1 = document.getElementById("1")
+        let parrafo2 = document.getElementById("2")
+        let parrafo3 = document.getElementById("3")
+        let mostrar = document.getElementById("reaparecer")
+        parrafo1.addEventListener("click",function(){
+        parrafo1.style.display="none"
+        });
+        parrafo1.addEventListener("dbclick",function(){
+        parrafo1.remove();
+        });
+        parrafo2.addEventListener("click",function(){
+        parrafo2.style.display="none"
+        });
+        parrafo2.addEventListener("dbclick",function(){
+        parrafo2.remove();
+        });
+        parrafo3.addEventListener("click",function(){
+        parrafo3.style.display="none"
+        });
+        parrafo3.addEventListener("dbclick",function(){
+        parrafo3.remove();
+        });
+        mostrar.addEventListener("click",function(){
+            parrafo1.style.display="block"
+            parrafo2.style.display="block"
+            parrafo3.style.display="block"
+        })
+    </script>
+
+</body>
+</html>

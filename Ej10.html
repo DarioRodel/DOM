@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej10</title>
+</head>      
+<body>
+    <form action="#" method="post" id="formulario" onclick="validarFormulario()">
+      <p>
+        <label for="usuario">Ingrese email:</label>
+        <input type="email" id="email" required oninput="validarEmail()" />
+        <span id="resultado1"></span>
+      </p>
+      <p>
+        <label for="sitio">Ingrese sitio web:</label>
+        <input type="url" id="url" required oninput="validarURL()" />
+        <span id="resultado2"></span>
+      </p>
+      <p>
+        <input type="submit" value="confirmar" id="confirmar" />
+      </p>
+    </form>
+  
+</body>
+<script>
+function validarEmail() {
+            let email = document.getElementById("email");
+            let resultado1 = document.getElementById("resultado1");
+
+            if (email.validity.valid) {
+                resultado1.textContent = "Correcto";
+                resultado1.style.color = "green";
+            } else {
+                resultado1.textContent = "Fallo";
+                resultado1.style.color = "red";
+            }
+        }
+
+        function validarURL() {
+            let url = document.getElementById("url");
+            let resultado2 = document.getElementById("resultado2");
+
+            if (url.validity.valid) {
+                resultado2.textContent = "Correcto";
+                resultado2.style.color = "green";
+            } else {
+                resultado2.textContent = "Fallo";
+                resultado2.style.color = "red";
+            }
+        }
+
+        function validarFormulario(event) {
+            let email = document.getElementById("email");
+            let url = document.getElementById("url");
+
+            if (!email.validity.valid || !url.validity.valid) {
+                event.preventDefault();
+                alert("Ingrese todos los datos");
+            }
+        }
+
+</script>
+</html>
