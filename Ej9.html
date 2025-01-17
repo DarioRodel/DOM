@@ -19,11 +19,11 @@
     </p>
   </body>
   <script>
-    const comentario = document.getElementById("comentarios");
-    const resultado = document.getElementById("resultado");
+    let comentario = document.getElementById("comentarios");
+    let resultado = document.getElementById("resultado");
 
-    comentario.addEventListener("input", () => {
-        const caracteresRestantes = comentario.maxLength - comentario.value.length;
+    comentario.addEventListener("input", function() {
+        let caracteresRestantes = comentario.maxLength - comentario.value.length;
         resultado.textContent = caracteresRestantes;
     });
 </script>

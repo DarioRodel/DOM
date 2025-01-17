@@ -31,7 +31,7 @@ function validarEmail() {
 
             if (email.validity.valid) {
                 resultado1.textContent = "Correcto";
-                resultado1.style.color = "green";
+                resultado1.style.color = "green"
             } else {
                 resultado1.textContent = "Fallo";
                 resultado1.style.color = "red";
@@ -44,19 +44,19 @@ function validarEmail() {
 
             if (url.validity.valid) {
                 resultado2.textContent = "Correcto";
-                resultado2.style.color = "green";
+                resultado2.style.color = "green"
             } else {
-                resultado2.textContent = "Fallo";
+                resultado2.textContent = "Fallo"
                 resultado2.style.color = "red";
             }
         }
 
         function validarFormulario(event) {
             let email = document.getElementById("email");
-            let url = document.getElementById("url");
+            let url = document.getElementById("url")
 
             if (!email.validity.valid || !url.validity.valid) {
-                event.preventDefault();
+                event.preventDefault()
                 alert("Ingrese todos los datos");
             }
         }

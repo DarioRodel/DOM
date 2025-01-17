@@ -21,7 +21,7 @@ function tabla(){
     let tabla=document.getElementById("tabla");
     let numero = 1;
     for(let i = 0; i < 100; i++){
-        let fila = document.createElement("tr");
+        let fila = document.createElement("tr")
         for(let d = 0; d < 100; d++){
             let columna = document.createElement("td");
             columna.textContent = numero;
@@ -39,15 +39,15 @@ function esCasiPrimo(n) {
             divisores++;
         }
     }
-    return divisores === 3; 
+    return divisores === 3
 }
 
 function resaltarPrimo(){
     let celdas = document.getElementById("tabla").getElementsByTagName("td");
     for (let i = 0; i < celdas.length; i++) {
-        let numero = parseInt(celdas[i].textContent);
+        let numero = parseInt(celdas[i].textContent)
         if (esCasiPrimo(numero)) {
-            celdas[i].classList.add("casi-primo");
+            celdas[i].classList.add("casi-primo")
         }
     }
 }

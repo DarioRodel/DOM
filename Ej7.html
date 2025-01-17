@@ -33,9 +33,9 @@
     function realizarOperacion() {
         let num1 = parseFloat(document.getElementById("valor1").value);
         let num2 = parseFloat(document.getElementById("valor2").value);
-        let suma = document.getElementById("suma").checked;
-        let resta = document.getElementById("resta").checked;
-        let resultado = document.getElementById("resultado");
+        let suma = document.getElementById("suma").checked
+        let resta = document.getElementById("resta").checked
+        let resultado = document.getElementById("resultado")
 
 
         if (suma && resta) {
@@ -43,9 +43,9 @@
         } else if (suma && !resta) {
             resultado.textContent = "La suma es " + (num1 + num2);
         } else if (!suma && resta) {
-            resultado.textContent = "La diferencia es " + (num1 - num2);
+            resultado.textContent = "La diferencia es " + (num1 - num2)
         } else {
-            resultado.textContent = "No se seleccionó ninguna operación.";
+            resultado.textContent = "No se seleccionó ninguna operación."
         }
     }
 </script>

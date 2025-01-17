@@ -6,6 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="marcar">Marcar todos</button>
+    <button id="desmarcar">Desmarcar todos</button>
+    <div id="contenedor"></div>
 </body>
+<script>
+    let contador=0
+    let contendedor=document.getElementById("contenedor");
+    let marcar=document.getElementById("marcar")
+    let desmarcar=document.getElementById("desmarcar")
+    for(let i = 0;i<100;i++){
+        let randomNumero=Math.floor(Math.random()*(100-1))+1
+        let checkbox=document.createElement("input")
+        checkbox.setAttribute("type","checkbox")
+        checkbox.setAttribute("name","checkbox"+contador);
+        checkbox.setAttribute("id","checkbox"+contador)
+
+        let label = document.createElement("label")
+        label.setAttribute("for", "checkbox" + contador)
+        label.textContent = randomNumero;
+        
+        let div = document.createElement("div")
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        
+        contenedor.appendChild(div);
+        contador++
+    }
+
+    marcar.addEventListener("click",function(){
+        let checkboxes=contendedor.getElementsByTagName("input")
+        for(let check of checkboxes){
+            check.checked=true
+        }
+    })
+
+    desmarcar.addEventListener("click",function(){
+        let checkboxes=contendedor.getElementsByTagName("input")
+        for(let check of checkboxes){
+            check.checked=false
+        }
+    })
+</script>
 </html>
